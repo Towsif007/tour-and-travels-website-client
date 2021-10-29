@@ -1,0 +1,30 @@
+/* .orderpage{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    
+
+    width: 50%;
+}
+
+img{
+    width: 50%;
+}
+     */
+
+.order-form{
+    margin: 100px 100px;
+}
+
+.order-form input{
+    display: block;
+    margin-top: 20px;
+    padding: 10,30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.error{
+    display: inline-block;
+    color: red;
+}

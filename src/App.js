@@ -1,53 +1,54 @@
 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import NotFound from './components/NotFound/NotFound';
+import OrderPage from './components/OrderPage/OrderPage';
+import Footer from './components/Shared/Footer/Footer';
+import Header from './components/Shared/Header/Header';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import MyOrders from './components/MyOrders/MyOrders';
 
 function App() {
 
   return (
     <div className="App">
-
-           
+      <AuthProvider>
+      <Router>
+        <Header></Header>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+            </Route>
+          <Route path="/myorders">
+            <MyOrders></MyOrders>
+            </Route>
+          <PrivateRoute path="/orderpage/:tourId">
+            <OrderPage></OrderPage>
+            </PrivateRoute>
+          <Route path='*'>
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+      </Router>
+      </AuthProvider>
     </div>
   );
 }
 
 export default App;
 
-// [
-//   {
-//     "id": 1,
-//     "name": "Maldives Tour for 3 days and 2 nights",
-//     "Description": "In this tour you can go Maldives and stay there 3 days and 2 night. We shall provide you one guide. You can go with your wife or your friend",
-//     "img": "https://i.ibb.co/b6cNdw8/5310438.jpg"
-//   },
-//   {
-//     "id": 2,
-//     "name": "Thiland Tour for 3 days and 2 nights",
-//     "Description": "In this tour you can go Thailand and stay there 3 days and 2 night. We shall provide you one guide. You can go with your wife or your friend",
-//     "img": "https://i.ibb.co/mStHkDc/3667783.jpg"
-//   },
-//   {
-//     "id": 3,
-//     "name": "Coxsbazar Tour for 3 days and 2 nights",
-//     "Description": "In this tour you can go Coxsbazar and stay there 3 days and 2 night. We shall provide you one guide. You can go with your wife or your friends",
-//     "img": "https://i.ibb.co/F0Lbj7P/3667769.jpg"
-//   },
-//   {
-//     "id": 4,
-//     "name": "Singapore Tour for 3 days and 2 night",
-//     "Description": "In this tour you can go Singapore and stay there 3 days and 2 night. We shall provide you one guide. You can go with your wife or your friend",
-//     "img": "https://i.ibb.co/80wpHQq/2855651.jpg"
-//   },
-//   {
-//     "id": 5,
-//     "name": "India Tour for 3 days and 2 night",
-//     "Description": "In this tour you can go Maldives and stay there 3 days and 2 night. We shall provide you one guide. You can go with your wife or your friend",
-//     "img": "https://i.ibb.co/n6Y1gRn/2770053.jpg"
-//   },
-//   {
-//     "id": 6,
-//     "name": "Australia Tour for 3 days and 2 night",
-//     "Description": "In this tour you can go Maldives and stay there 3 days and 2 night. We shall provide you one guide. You can go with your wife or your friend",
-//     "img": "https://i.ibb.co/qJZwvQ6/2821685.jpg"
-//   }
-// ]
+
+
+
+
+
