@@ -34,7 +34,6 @@ const OrderPage = () => {
         </div>
          </div>
 
-        
         <div className="order-form">
          <form  onSubmit={handleSubmit(onSubmit)}>
 
@@ -52,7 +51,6 @@ const OrderPage = () => {
       <input defaultValue={tour.name}placeholder="Name" {...register("tourname")}/>
       <textarea defaultValue={tour.Description}  placeholder="Description"{...register("Description")} />
       
-      {/* <input className="btn btn-warning" placeholder=""type="submit" /> */}
       <Link to={`/myorders/${tourId}`}><input className="btn btn-warning" placeholder=""type="submit" /></Link>
     </form>
     </div>

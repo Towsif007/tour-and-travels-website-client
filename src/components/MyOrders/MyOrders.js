@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './MyOrders.css'
 
 const MyOrders = () => {
     const {user} = useAuth();
     const [orders, setOrders] = useState([]);
-    // const {tourId} = useParams();
+
 
     useEffect(()=>{
         fetch( `https://creepy-ghoul-13388.herokuapp.com/tours/${user?.email}`)
@@ -31,21 +30,3 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
-
-
-// {event?.map((pd, index) => (
-//     <tbody>
-//       <tr>
-//         <td>{index}</td>
-//         <td>{pd.title}</td>
-//         <td>{pd.description}</td>
-//         <td>{pd.image}</td>
-//         <button
-//           onClick={() => handleDelete(pd._id)}
-//           className="btn bg-danger p-2"
-//         >
-//           Delete
-//         </button>
-//       </tr>
-//     </tbody>
-//   ))}
