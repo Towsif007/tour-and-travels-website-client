@@ -9,7 +9,7 @@ const AddNewTour = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/addtours', data)
+        axios.post('https://creepy-ghoul-13388.herokuapp.com/addtours', data)
         .then(res => {
             if(res.data.insertedId){
                 alert('Inserted successfully')
@@ -27,7 +27,7 @@ const AddNewTour = () => {
       <textarea {...register("Description")} placeholder="Description" />
       <input {...register("img")} placeholder="Image url" />
      
-      <input type="submit" />
+      <input className="btn btn-primary" type="submit" />
     </form>
         </div>
     );

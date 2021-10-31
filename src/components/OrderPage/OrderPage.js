@@ -17,7 +17,7 @@ const OrderPage = () => {
     const [tour, setTour] = useState({})
 
     useEffect( ()=>{
-        fetch(`http://localhost:5000/tours/${tourId}`)
+        fetch(`https://creepy-ghoul-13388.herokuapp.com/tours/${tourId}`)
         .then(res => res.json())
         .then(data =>setTour(data))
     }, [])
@@ -52,6 +52,7 @@ const OrderPage = () => {
       <input defaultValue={tour.name}placeholder="Name" {...register("tourname")}/>
       <textarea defaultValue={tour.Description}  placeholder="Description"{...register("Description")} />
       
+      {/* <input className="btn btn-warning" placeholder=""type="submit" /> */}
       <Link to={`/myorders/${tourId}`}><input className="btn btn-warning" placeholder=""type="submit" /></Link>
     </form>
     </div>

@@ -6,10 +6,10 @@ import './MyOrders.css'
 const MyOrders = () => {
     const {user} = useAuth();
     const [orders, setOrders] = useState([]);
-    const {tourId} = useParams();
+    // const {tourId} = useParams();
 
     useEffect(()=>{
-        fetch( `http://localhost:5000/tours/${tourId}&&${user?.email}`)
+        fetch( `https://creepy-ghoul-13388.herokuapp.com/tours/${user?.email}`)
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [user?.email])
