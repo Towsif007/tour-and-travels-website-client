@@ -1,27 +1,30 @@
-/* .orderpage{
-    display: grid;
-    grid-template-columns: repeat(1fr);
-    
-
-    width: 50%;
+.orderpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 img{
     width: 50%;
 }
-     */
+    
 
 .order-form{
-    margin: 100px 100px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.order-form input{
-    display: block;
+.order-form form input, textarea{
+
     margin-top: 20px;
-    padding: 10,30px;
+    padding: 20,30px;
     border: 1px solid grey;
     border-radius: 5px;
-    width: 300px;
+    width: 60%;
 }
 
 .error{

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
+import './Login.css'
 
 const Login = () => {
     const {signInUsingGoogle} = useAuth();
@@ -14,9 +15,9 @@ const Login = () => {
             });
     }
     return (
-        <div>
+        <div className='mt-5'>
            <h1>Please Login</h1> 
-           <button onClick={handleGoogleLogin} className="btn btn-warning">Google Sign In</button>
+           <button onClick={handleGoogleLogin} className="btn btn-warning mt-4 login">Google Sign In</button>
         </div>
     );
 };

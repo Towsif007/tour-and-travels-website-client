@@ -18,6 +18,12 @@ const Header = () => {
         {user?.email ?
           <Link className="nav-link active" to="/myorders">My orders</Link>:
           []}
+        {user?.email ?
+          <Link className="nav-link active" to="/manageallbookings">Manage All Bookings</Link>:
+          []}
+        {user?.email ?
+          <Link className="nav-link active" to="/addnewtour">Add A New Tour</Link>:
+          []}
         <li className="nav-item">
           {user?.email ?
             <button onClick={logOut} className="btn btn-warning">LogOut 
